@@ -138,11 +138,6 @@ public class MpRoSite implements Runnable, SiteProcedureConnection
         }
 
         @Override
-        public long getNextUndo() {
-            return getNextUndoToken();
-        }
-
-        @Override
         public long getSiteId() {
             return m_siteId;
         }
