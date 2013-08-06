@@ -143,12 +143,6 @@ public class MpRoSite implements Runnable, SiteProcedureConnection
         }
 
         @Override
-        public ImmutableMap<String, ProcedureRunner> getProcedures() {
-            throw new RuntimeException("Not implemented in iv2");
-            // return m_loadedProcedures.procs;
-        }
-
-        @Override
         public long getSiteId() {
             return m_siteId;
         }
@@ -189,11 +183,6 @@ public class MpRoSite implements Runnable, SiteProcedureConnection
         @Override
         public int getCatalogVersion() {
             return m_context.catalogVersion;
-        }
-
-        @Override
-        public SiteTracker getSiteTracker() {
-            throw new RuntimeException("Not implemented in iv2");
         }
 
         @Override
