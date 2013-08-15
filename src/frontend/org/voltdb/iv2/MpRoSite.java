@@ -45,9 +45,6 @@ import org.voltdb.catalog.Database;
 import org.voltdb.dtxn.SiteTracker;
 import org.voltdb.dtxn.TransactionState;
 import org.voltdb.exceptions.EEException;
-import org.voltdb.jni.ExecutionEngine;
-
-import com.google.common.collect.ImmutableMap;
 
 public class MpRoSite implements Runnable, SiteProcedureConnection
 {
