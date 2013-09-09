@@ -1140,19 +1140,20 @@ public class DDLCompiler {
                     if (inner_child.name.equals("value")) {
                         assert(defaulttype == null); // There should be only one default value/type.
                         defaultvalue = inner_child.attributes.get("value");
+                        if (defaultvalue == null) {
+                            defaulttype = "NULL";
+                        }
                         defaulttype = inner_child.attributes.get("valuetype");
                         assert(defaulttype != null);
                     }
                 }
             }
         }
-        if (defaultvalue != null && defaultvalue.equals("NULL"))
+        if (defaultvalue != null && defaultvalue.equals("NULL")) {
             defaultvalue = null;
+        }
         if (defaulttype != null) {
             // fyi: Historically, VoltType class initialization errors get reported on this line (?).
-            if (defaultvalue == null) {
-                defaulttype = "NULL";
-            }
             defaulttype = Integer.toString(VoltType.typeFromString(defaulttype).getValue());
         }
 
